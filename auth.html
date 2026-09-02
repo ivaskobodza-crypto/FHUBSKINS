@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FHUBSKINS — Аккаунт</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <nav class="navigation">
+        <a href="index.html">Главная</a>
+        <a href="index.html">Скины</a>
+        <a href="#">Категории</a>
+        <a href="#">Популярные</a>
+    </nav>
+
+</header>
+
+
+<main class="auth-page">
+
+    <section class="auth-card">
+
+        <div class="badge">
+            ✦ FHUBSKINS
+        </div>
+
+        <h1 id="authTitle">
+            Войти
+        </h1>
+
+        <p id="authSubtitle">
+            Войди в свой аккаунт FHUBSKINS
+        </p>
+
+
+        <form id="authForm">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Имя пользователя"
+                maxlength="20"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Пароль"
+                minlength="6"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="download-button auth-submit"
+            >
+                Войти
+            </button>
+
+        </form>
+
+
+        <div
+            id="authMessage"
+            class="auth-message"
+        ></div>
+
+
+        <button
+            id="switchMode"
+            class="auth-switch"
+            type="button"
+        >
+            Нет аккаунта? Зарегистрироваться
+        </button>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <p>
+        © 2026 FHUBSKINS
+    </p>
+
+</footer>
+
+
+<script src="auth.js"></script>
+
+</body>
+</html>

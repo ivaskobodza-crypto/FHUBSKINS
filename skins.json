@@ -1,0 +1,73 @@
+[
+    {
+        "id": "7ce05caa-8ecb-4309-a17a-137b94f599f7",
+        "title": "Black White girls",
+        "author": "bogomdan1337",
+        "category": "girls",
+        "price": 0,
+        "likes": 0,
+        "downloads": 0,
+        "file": "/uploads/1788355666134-164046392.png",
+        "createdAt": "2026-09-02T13:27:46.142Z"
+    },
+    {
+        "id": "3f4420c6-9501-46b0-8d21-8452e5d8195f",
+        "title": "PVP skin Copy",
+        "author": "bogomdan1337",
+        "category": "pvp",
+        "likes": 0,
+        "downloads": 0,
+        "file": "/uploads/1788339247115-13961345.png",
+        "createdAt": "2026-09-02T08:54:07.117Z"
+    },
+    {
+        "id": "cda46f9a-a9f4-4f10-af02-4a599b42ed37",
+        "title": "Barbie",
+        "author": "bogomdan1337",
+        "category": "girls",
+        "likes": 0,
+        "downloads": 0,
+        "file": "/uploads/1788292849862-161808410.png",
+        "createdAt": "2026-09-01T20:00:49.872Z"
+    },
+    {
+        "id": "dark-warrior",
+        "title": "Dark Warrior",
+        "author": "FHUB",
+        "category": "funny",
+        "likes": 0,
+        "downloads": 0,
+        "file": "/skins/dark-warrior.png",
+        "createdAt": "2026-09-01T00:00:00.000Z"
+    },
+    {
+        "id": "cyber-ninja",
+        "title": "Cyber Ninja",
+        "author": "Player",
+        "category": "boys",
+        "likes": 0,
+        "downloads": 0,
+        "file": "/skins/cyber-ninja.png",
+        "createdAt": "2026-09-01T00:00:00.000Z"
+    },
+    {
+        "id": "ender-knight",
+        "title": "Ender Knight",
+        "author": "Alex",
+        "category": "girls",
+        "likes": 0,
+        "downloads": 0,
+        "file": "/skins/ender-knight.png",
+        "createdAt": "2026-09-01T00:00:00.000Z"
+    },
+    {
+        "id": "nether-king",
+        "title": "Nether King",
+        "author": "Steve",
+        "category": "girls",
+        "likes": 0,
+        "downloads": 0,
+        "file": "/skins/nether-king.png",
+        "createdAt": "2026-09-01T00:00:00.000Z"
+    }
+]

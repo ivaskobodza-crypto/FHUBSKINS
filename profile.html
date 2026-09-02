@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FHUBSKINS — Профиль</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <nav class="navigation">
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="index.html">
+            Скины
+        </a>
+
+       <a href="index.html#categories">
+    Категории
+</a>
+
+        <a href="upload.html">
+            Загрузить
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="profile-page">
+
+    <section class="profile-card">
+
+        <div class="profile-avatar">
+            <span id="profileLetter">?</span>
+        </div>
+
+        <div class="profile-info">
+
+            <div class="badge">
+                ✦ FHUBSKINS
+            </div>
+
+            <h1 id="profileUsername">
+                Загрузка...
+            </h1>
+
+            <p id="profileDate">
+                Загрузка профиля...
+            </p>
+
+        </div>
+
+        <button
+            id="logoutButton"
+            class="favorite-button"
+            type="button"
+        >
+            Выйти
+        </button>
+
+    </section>
+
+
+    <section class="profile-skins">
+
+        <div class="profile-section-header">
+
+            <div>
+                <h2>
+                    Мои скины
+                </h2>
+
+                <p>
+                    Скины, опубликованные этим аккаунтом
+                </p>
+            </div>
+
+            <a
+                href="upload.html"
+                class="upload-button"
+            >
+                + Загрузить скин
+            </a>
+
+        </div>
+
+
+        <div
+            id="profileSkins"
+            class="skins-grid"
+        >
+        </div>
+
+    </section>
+
+<section class="profile-skins">
+
+    <div class="profile-section-header">
+        <div>
+            <h2>
+                Избранные
+            </h2>
+
+            <p>
+                Скины, которые ты добавил в избранное
+            </p>
+        </div>
+    </div>
+
+    <div
+        id="favoriteSkins"
+        class="skins-grid"
+    >
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <p>
+        © 2026 FHUBSKINS
+    </p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+<script src="profile.js"></script>
+
+</body>
+</html>

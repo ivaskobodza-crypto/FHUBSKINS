@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FHUBSKINS — Загрузить скин</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <nav class="navigation">
+        <a href="index.html">Главная</a>
+        <a href="index.html">Скины</a>
+        <a href="#">Категории</a>
+        <a href="#">Популярные</a>
+    </nav>
+
+    <button class="login-button">
+        Войти
+    </button>
+
+</header>
+
+
+<main class="upload-page">
+
+    <div class="upload-page-header">
+
+        <a href="index.html" class="back-button">
+            ← Назад к скинам
+        </a>
+
+        <div class="badge">
+            ✦ FHUBSKINS
+        </div>
+
+        <h1>
+            Загрузить свой <span>скин</span>
+        </h1>
+
+        <p>
+            Загрузи Minecraft-скин и опубликуй его в каталоге FHUBSKINS.
+        </p>
+
+    </div>
+
+
+    <section class="upload-box">
+
+        <div class="upload-icon">
+            ↑
+        </div>
+
+        <h2>
+            Данные скина
+        </h2>
+
+        <div class="upload-fields">
+
+    <input
+        type="text"
+        id="skinTitle"
+        placeholder="Название скина"
+        maxlength="60"
+    >
+
+</div>
+
+<div
+    id="currentUser"
+    class="current-user"
+>
+    Проверка аккаунта...
+</div>
+
+
+        <h2>
+            Файл
+        </h2>
+
+        <p>
+            Только PNG 64×64
+        </p>
+
+        <input
+            type="file"
+            id="skinFile"
+            accept="image/png"
+        >
+
+        <label
+            for="skinFile"
+            class="choose-file"
+        >
+            Выбрать PNG
+        </label>
+
+        <div
+            id="fileName"
+            class="file-name"
+        >
+            Файл не выбран
+        </div>
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+    </section>
+
+<div class="upload-category">
+
+    <label for="skinCategory">
+        Категория
+    </label>
+
+    <select id="skinCategory">
+
+        <option value="">
+            Выбери категорию
+        </option>
+
+        <option value="pvp">
+            PvP
+        </option>
+
+        <option value="anime">
+            Anime
+        </option>
+
+        <option value="girls">
+            Girls
+        </option>
+
+        <option value="boys">
+            Boys
+        </option>
+
+        <option value="funny">
+            Funny
+        </option>
+
+        <option value="mobs">
+            Mobs
+        </option>
+
+    </select>
+
+</div>
+
+    <section
+        id="previewSection"
+        class="upload-preview"
+        style="display: none;"
+    >
+
+        <h2>
+            Предпросмотр
+        </h2>
+
+        <div class="preview-skin">
+
+            <canvas id="uploadSkinCanvas"></canvas>
+
+        </div>
+
+
+        <div class="upload-actions">
+
+            <button
+                id="publishButton"
+                class="download-button"
+                type="button"
+            >
+                Опубликовать скин
+            </button>
+
+            <button
+                id="clearButton"
+                class="favorite-button"
+                type="button"
+            >
+                Очистить
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <p>
+        © 2026 FHUBSKINS
+    </p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+
+<script src="upload.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FHUBSKINS — Админ-панель</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+
+    <nav class="navigation">
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="profile.html">
+            Профиль
+        </a>
+
+    </nav>
+
+
+    <a
+        href="profile.html"
+        class="login-button"
+    >
+        Кабинет
+    </a>
+
+</header>
+
+
+
+<main class="admin-page">
+
+
+    <div class="admin-header">
+
+        <div class="badge">
+            ✦ ADMIN
+        </div>
+
+
+        <h1>
+            Панель <span>управления</span>
+        </h1>
+
+
+        <p>
+            Управление каталогом FHUBSKINS
+        </p>
+<div class="admin-stats">
+
+    <div class="admin-stat-card">
+
+        <span class="admin-stat-value" id="totalSkins">
+            0
+        </span>
+
+        <span class="admin-stat-label">
+            Скинов
+        </span>
+
+    </div>
+
+
+    <div class="admin-stat-card">
+
+        <span class="admin-stat-value" id="totalLikes">
+            0
+        </span>
+
+        <span class="admin-stat-label">
+            Лайков
+        </span>
+
+    </div>
+
+
+    <div class="admin-stat-card">
+
+        <span class="admin-stat-value" id="totalDownloads">
+            0
+        </span>
+
+        <span class="admin-stat-label">
+            Скачиваний
+        </span>
+
+    </div>
+
+</div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ДОБАВЛЕНИЕ СКИНА
+         ========================= -->
+
+    <section class="admin-card">
+
+        <div class="admin-card-header">
+
+            <div>
+
+
+                <h2>
+                    Добавить скин
+                </h2>
+
+                <p>
+                    Новый скин появится в каталоге автоматически.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="upload-fields">
+
+            <input
+                type="text"
+                id="skinTitle"
+                placeholder="Название скина"
+                maxlength="60"
+            >
+
+        </div>
+
+
+        <div class="upload-category">
+
+            <label for="skinCategory">
+                Категория
+            </label>
+
+
+            <select id="skinCategory">
+
+                <option value="">
+                    Выбери категорию
+                </option>
+
+                <option value="pvp">
+                    PvP
+                </option>
+
+                <option value="anime">
+                    Anime
+                </option>
+
+                <option value="girls">
+                    Girls
+                </option>
+
+                <option value="boys">
+                    Boys
+                </option>
+
+                <option value="funny">
+                    Funny
+                </option>
+
+                <option value="mobs">
+                    Mobs
+                </option>
+
+            </select>
+
+        </div>
+<div class="upload-price">
+
+    
+
+   
+
+        <input
+            type="file"
+            id="skinFile"
+            accept="image/png"
+        >
+
+
+        <label
+            for="skinFile"
+            class="choose-file"
+        >
+            Выбрать PNG
+        </label>
+
+
+        <div
+            id="fileName"
+            class="file-name"
+        >
+            Файл не выбран
+        </div>
+
+
+        <div
+            id="currentAdmin"
+            class="current-user"
+        >
+            Проверка доступа...
+        </div>
+
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+
+        <div
+            id="previewSection"
+            class="upload-preview"
+            style="display:none;"
+        >
+
+            <h2>
+                Предпросмотр
+            </h2>
+
+
+            <div class="preview-skin">
+
+                <canvas
+                    id="uploadSkinCanvas"
+                ></canvas>
+
+            </div>
+
+
+            <div class="upload-actions">
+
+                <button
+                    id="publishButton"
+                    class="download-button"
+                    type="button"
+                >
+                    Опубликовать скин
+                </button>
+
+
+                <button
+                    id="clearButton"
+                    class="favorite-button"
+                    type="button"
+                >
+                    Очистить
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+   <!-- =========================
+     ВСЕ СКИНЫ
+     ========================= -->
+
+<section class="admin-card">
+
+    <div class="admin-card-header">
+
+        <div>
+
+            <h2>
+                Все скины
+            </h2>
+
+            <p>
+                Управление публикациями FHUBSKINS.
+            </p>
+
+        </div>
+
+        <span
+            id="skinsCount"
+            class="admin-count"
+        >
+            0
+        </span>
+
+<button
+    type="button"
+    class="admin-refresh-button"
+    id="adminRefreshButton"
+    title="Обновить список"
+    aria-label="Обновить список"
+>
+    <svg
+        class="dragon-refresh-icon"
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <!-- Голова -->
+        <rect x="14" y="18" width="36" height="30"/>
+        <rect x="10" y="24" width="44" height="20"/>
+        
+        <!-- Уши / рога -->
+        <rect x="12" y="10" width="10" height="10"/>
+        <rect x="42" y="10" width="10" height="10"/>
+        <rect x="8" y="6" width="7" height="10"/>
+        <rect x="49" y="6" width="7" height="10"/>
+
+        <!-- Глаза -->
+        <rect x="18" y="25" width="8" height="7"/>
+        <rect x="38" y="25" width="8" height="7"/>
+
+        <!-- Морда -->
+        <rect x="23" y="35" width="18" height="10"/>
+        <rect x="27" y="43" width="10" height="7"/>
+
+        <!-- Нижняя челюсть -->
+        <rect x="20" y="47" width="24" height="5"/>
+    </svg>
+</button>
+
+    </div>
+
+
+    <div class="admin-search">
+
+        <input
+            type="text"
+            id="adminSearchInput"
+            placeholder="Поиск по названию или автору..."
+        >
+
+    </div>
+
+<div class="admin-sort">
+
+    <label for="adminSort">
+        Сортировка:
+    </label>
+
+    <select id="adminSort">
+
+        <option value="new">
+            Новые
+        </option>
+
+        <option value="likes">
+            По лайкам
+        </option>
+
+        <option value="downloads">
+            По скачиваниям
+        </option>
+
+        <option value="title">
+            По названию
+        </option>
+
+    </select>
+
+</div>
+
+
+    <div
+        id="adminSkins"
+        class="admin-skins-list"
+    >
+
+        <div class="admin-loading">
+            Загрузка скинов...
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+
+    <p>
+        © 2026 FHUBSKINS
+    </p>
+
+</footer>
+
+<!-- =========================
+     ОКНО РЕДАКТИРОВАНИЯ
+     ========================= -->
+
+<div
+    class="edit-modal"
+    id="editModal"
+>
+
+    <div class="edit-modal-overlay"></div>
+
+
+    <div class="edit-modal-box">
+
+        <div class="edit-modal-header">
+
+            <div>
+
+                <span class="catalog-badge">
+                    FHUBSKINS
+                </span>
+
+                <h2>
+                    Редактирование скина
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="edit-modal-close"
+                id="editModalClose"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="edit-modal-content">
+
+            <label for="editSkinTitle">
+                Название
+            </label>
+
+            <input
+                type="text"
+                id="editSkinTitle"
+                maxlength="60"
+                placeholder="Название скина"
+            >
+
+
+            <label for="editSkinCategory">
+                Категория
+            </label>
+
+            <select id="editSkinCategory">
+
+                <option value="pvp">
+                    PvP
+                </option>
+
+                <option value="anime">
+                    Anime
+                </option>
+
+                <option value="girls">
+                    Girls
+                </option>
+
+                <option value="boys">
+                    Boys
+                </option>
+
+                <option value="funny">
+                    Funny
+                </option>
+
+                <option value="mobs">
+                    Mobs
+                </option>
+
+            </select>
+
+
+            <div
+                id="editModalMessage"
+                class="edit-modal-message"
+            ></div>
+
+        </div>
+
+
+        <div class="edit-modal-actions">
+
+            <button
+                type="button"
+                class="favorite-button"
+                id="editModalCancel"
+            >
+                Отмена
+            </button>
+
+
+            <button
+                type="button"
+                class="download-button"
+                id="editModalSave"
+            >
+                Сохранить
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     ОКНО СМЕНЫ PNG
+     ========================= -->
+
+<div
+    class="edit-modal"
+    id="pngModal"
+>
+
+    <div class="edit-modal-overlay"></div>
+
+
+    <div class="edit-modal-box">
+
+        <div class="edit-modal-header">
+
+            <div>
+
+                <span class="catalog-badge">
+                    FHUBSKINS
+                </span>
+
+                <h2>
+                    Замена PNG
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="edit-modal-close"
+                id="pngModalClose"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="edit-modal-content">
+
+            <p style="color:#888;">
+                Выбери новый PNG-файл скина.
+                Разрешён только формат 64×64.
+            </p>
+
+
+            <input
+                type="file"
+                id="changePngFile"
+                accept="image/png"
+            >
+
+
+            <label
+                for="changePngFile"
+                class="choose-file"
+            >
+                Выбрать новый PNG
+            </label>
+
+
+            <div
+                id="changePngFileName"
+                class="file-name"
+            >
+                Файл не выбран
+            </div>
+
+
+            <div
+                id="changePngMessage"
+                class="edit-modal-message"
+            ></div>
+
+        </div>
+
+
+        <div class="edit-modal-actions">
+
+            <button
+                type="button"
+                class="favorite-button"
+                id="pngModalCancel"
+            >
+                Отмена
+            </button>
+
+
+            <button
+                type="button"
+                class="download-button"
+                id="pngModalSave"
+            >
+                Заменить PNG
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+
+<script src="admin.js"></script>
+
+
+</body>
+</html>

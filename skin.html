@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FHUBSKINS — Скин</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <nav class="navigation">
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="index.html">
+            Скины
+        </a>
+
+        <a href="#">
+            Категории
+        </a>
+
+        <a href="#">
+            Популярные
+        </a>
+
+    </nav>
+
+    <button class="login-button">
+        Войти
+    </button>
+
+</header>
+
+
+<main class="skin-page">
+
+    <a
+        href="index.html"
+        class="back-button"
+    >
+        ← Назад к скинам
+    </a>
+
+
+    <section class="skin-detail">
+
+
+        <div class="big-skin-view">
+
+            <canvas id="mainSkin"></canvas>
+
+        </div>
+
+
+        <div class="skin-details">
+
+            <div class="badge">
+                ✦ MINECRAFT SKIN
+            </div>
+
+
+            <h1 id="skinTitle">
+                Dark Warrior
+            </h1>
+
+
+            <p class="skin-author">
+                Автор:
+                <span id="skinAuthor">
+                    FHUB
+                </span>
+            </p>
+
+
+            <div class="skin-stats">
+
+                <div>
+                    ❤️
+                    <span id="skinLikes">
+                        124
+                    </span>
+                    лайков
+                </div>
+
+                <div>
+                    ⬇
+                    <span id="skinDownloads">
+                        842
+                    </span>
+                    скачиваний
+                </div>
+
+            </div>
+
+
+            <p class="skin-description">
+
+                Minecraft-скин для твоего персонажа.
+                Скачай PNG и используй его в Minecraft.
+
+            </p>
+
+
+            <div class="skin-actions">
+
+                <button
+    id="downloadButton"
+    class="download-button"
+    type="button"
+>
+    ↓ Скачать PNG
+</button>
+
+
+               <button
+    id="likeButton"
+    class="favorite-button"
+    type="button"
+>
+    ❤️ Нравится
+</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+    <p>
+        © 2026 FHUBSKINS
+    </p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+
+<script src="skin.js"></script>
+
+</body>
+
+</html>

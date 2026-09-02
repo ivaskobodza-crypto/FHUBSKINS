@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FHUBSKINS — Minecraft Skins</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header class="header">
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+
+    <nav class="navigation">
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="#skins">
+            Скины
+        </a>
+
+        <a href="#categories">
+            Категории
+        </a>
+
+        <a href="#skins">
+            Популярные
+        </a>
+
+    </nav>
+
+
+   <div class="header-account">
+
+    <a
+        href="auth.html"
+        class="login-button"
+        id="loginButton"
+    >
+        Войти
+    </a>
+
+
+    <button
+        class="profile-button"
+        id="profileButton"
+        type="button"
+        style="display: none;"
+        title="Профиль"
+    >
+        <span id="profileLetter">?</span>
+    </button>
+
+
+    <div
+        class="profile-menu"
+        id="profileMenu"
+    >
+
+        <div class="profile-menu-user">
+
+            <div class="profile-menu-avatar">
+                <span id="menuProfileLetter">?</span>
+            </div>
+
+            <div>
+                <strong id="menuUsername">
+                    Пользователь
+                </strong>
+
+                <span>
+                    FHUBSKINS
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="profile-menu-divider"></div>
+
+
+       <a href="profile.html">
+    👤 Мой профиль
+</a>
+
+<a href="profile.html">
+    🎨 Мои скины
+</a>
+
+<a
+    href="admin.html"
+    id="adminMenuItem"
+    style="display: none;"
+>
+    ⚙️ Админ-панель
+</a>
+
+
+<div class="profile-menu-divider"></div>
+
+
+        <button
+            id="menuLogout"
+            type="button"
+        >
+            ⇥ Выйти
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✦ MINECRAFT SKINS
+        </div>
+
+
+        <h1>
+            Найди свой<br>
+            <span>идеальный скин</span>
+        </h1>
+
+
+        <p>
+            Тысячи Minecraft-скинов для твоего персонажа.
+            Выбирай, скачивай и создавай свой стиль.
+        </p>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Поиск скинов..."
+            >
+
+
+            <button
+                type="button"
+                onclick="searchSkins()"
+            >
+                🔍 Найти
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CATALOG
+     ========================= -->
+
+<section
+    class="skins-section"
+    id="skins"
+>
+
+
+    <div class="catalog-header">
+
+        <div class="catalog-title">
+
+            <span class="catalog-badge">
+                FHUBSKINS
+            </span>
+
+
+            <h2>
+                Популярные скины
+            </h2>
+
+
+            <p>
+                Лучшие скины сообщества FHUBSKINS
+            </p>
+
+        </div>
+
+
+        <button
+            class="all-button"
+            type="button"
+        >
+            Смотреть все →
+        </button>
+
+    </div>
+
+
+    <!-- СОРТИРОВКА -->
+
+    <div class="catalog-filters">
+
+        <button
+            class="filter-button active"
+            data-sort="all"
+            type="button"
+        >
+            Все
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-sort="new"
+            type="button"
+        >
+            Новые
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-sort="likes"
+            type="button"
+        >
+            Популярные
+        </button>
+
+
+        <button
+            class="filter-button"
+            data-sort="downloads"
+            type="button"
+        >
+            Больше скачиваний
+        </button>
+
+    </div>
+
+
+    <!-- КАТЕГОРИИ -->
+
+    <div
+        class="category-filters"
+        id="categories"
+    >
+
+        <button
+            class="category-button active"
+            data-category="all"
+            type="button"
+        >
+            Все
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="pvp"
+            type="button"
+        >
+            PvP
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="anime"
+            type="button"
+        >
+            Anime
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="girls"
+            type="button"
+        >
+            Girls
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="boys"
+            type="button"
+        >
+            Boys
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="funny"
+            type="button"
+        >
+            Funny
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="mobs"
+            type="button"
+        >
+            Mobs
+        </button>
+
+    </div>
+
+
+    <!-- СКИНЫ -->
+
+    <div
+        class="skins-grid"
+        id="skinsGrid"
+    ></div>
+
+
+</section>
+
+
+<!-- =========================
+     UPLOAD
+     ========================= -->
+
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="logo">
+        FHUB<span>SKINS</span>
+    </div>
+
+
+    <p>
+        © 2026 FHUBSKINS
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     SCRIPTS
+     ========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.js"></script>
+
+<script src="script.js"></script>
+<script src="account.js"></script>
+
+
+</body>
+</html>
